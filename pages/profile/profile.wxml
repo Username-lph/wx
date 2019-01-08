@@ -1,0 +1,33 @@
+<!--pages/profile/profile.wxml-->
+<view class="avatar flex-center">
+    <image class="avatar-img" src="/image/l.jpg"></image>
+</view>
+<!-- 分隔线 -->
+<view class="divider"></view>
+<!-- 个人资料 -->
+<view class="cell">
+    <navigator class="cell-item arrow">
+        <text>个人资料</text>
+    </navigator>
+    <navigator class="cell-item arrow">
+        <text>我的优惠券</text>
+    </navigator>
+</view>
+<!-- 分隔线 -->
+<view class="divider"></view>
+<!-- 常见问题 -->
+<view class="cell">
+    <navigator class="cell-item arrow">
+        <text>常见问题</text>
+    </navigator>
+    <navigator class="cell-item arrow">
+        <text>使用条款</text>
+    </navigator>
+</view>
+
+<view class="divider"></view>
+<view class="cell">
+    <navigator class="cell-item arrow">
+        <text>设置</text>
+    </navigator>
+</view>

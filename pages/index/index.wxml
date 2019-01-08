@@ -1,0 +1,37 @@
+<!-- index.wxml -->
+<!-- slider 轮播图 -->
+<view class="slider">
+    <swiper class="swiper-item" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" indicator-active-color="#f60" indicator-color="#ccc">
+        <block wx:for="{{imgUrls}}" wx:key="{{ index }}">
+            <swiper-item>
+                <image src="{{ item.image }}" class="slide-image" mode="aspectFill" />
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+<!-- slider e -->
+
+<!-- index nav s -->
+<view class="index-nav">
+    <navigator wx:for='{{ navList }}' wx:key="{{ index }}" class="nav-item bd-r" url="/pages/shoplist/shoplist?cat={{ item.id }}&title={{ item.name }}">
+        <image src="{{ item.icon }}" lazy-load></image>
+        <text>{{ item.name }}</text>
+        <!-- 复选框 checkbox -->
+        <!-- <checkbox checked='{{ false }}'></checkbox> -->
+    </navigator>
+
+</view>
+<!-- index enter -->
+<view class="divider"></view>
+<view class="index-enter">
+    <navigator class="enter-item">
+        <image src="/image/b.jpg"></image>
+    </navigator>
+    <navigator class="enter-item">
+        <image src="/image/c.jpg"></image>
+    </navigator>
+</view>
+<!-- 页面加载效果 -->
+<!-- <view class="load">
+    <view class="loading spin"></view>
+</view> -->

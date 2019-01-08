@@ -1,0 +1,83 @@
+<!--pages/contact/contact.wxml-->
+<view class="divider"></view>
+<view class="cell">
+    <navigator class="cell-item arrow">
+        <text>表单</text>
+    </navigator>
+    <view class="cell-item">
+        <input type="text" placeholder='user' confirm-type='search'></input>
+    </view>
+    <view class='cell-item'>
+        <input type="text" password placeholder='password'></input>
+    </view>
+    <view class='cell-item'>
+        <input type="number" placeholder='数字键盘' confirm-type="done"></input>
+    </view>
+    <view class='cell-item'>
+        <input type="idcard" placeholder='身份证信息' confirm-type='go'></input>
+    </view>
+    <view class='cell-item'>
+        <input type="digit" placeholder='带小数点键盘' confirm-type='send'></input>
+    </view>
+</view>
+
+<view class="divider"></view>
+<view class="cell">
+    <navigator class="cell-item arrow">
+        <text>其它表单组件</text>
+    </navigator>
+    <view class='cell-item'>
+        <checkbox-group>
+            <checkbox color="#f50" checked></checkbox>
+            <checkbox></checkbox>
+        </checkbox-group>
+    </view>
+    <!-- 单选框 按钮 -->
+    <view class='cell-item'>
+        <radio-group class='radio-group' bindchange='radioChangeHandle' data-para='参数'>
+            <label wx:for='{{ items }}' wx:key='{{ index }}'>
+                <radio value='{{ item.name }}' checked='{{ item.checked }}' color="{{ item.color }}">
+                    {{ item.value }}
+                </radio>
+            </label>
+        </radio-group>
+    </view>
+    <!-- 开关按钮 -->
+    <view class='cell-item Switch'>
+        <switch color='#f50' checked bindchange='switchChange' value='true' data-para='参数'></switch>
+        <switch color='' type='checkbox'></switch>
+        <switch color='' disabled></switch>
+    </view>
+
+</view>
+<!-- 事件冒泡  
+bindtap 冒泡事件 
+catchtap 非冒泡事件 
+绑定事件-->
+<view class="divider"></view>
+<view class='cell'>
+    <view class='cell-item arrow'>
+        <text>微信小程序事件</text>
+    </view>
+    <view class='cell-item arrow'>
+        <view class="father" bindtap='fatherTapHandle'>
+            父亲
+            <view class="son" catchtap='sonTapHandle' data-index='1'>儿子</view>
+            <view class="son" catchtap='sonTapHandle' data-index='2'>儿子</view>
+            <view class="son" catchtap='sonTapHandle' data-index='3'>儿子</view>
+        </view>
+    </view>
+
+</view>
+<!-- wxs页面脚本 wxml -->
+<wxs module='foo'>
+    //这里可以导出一个对象，这个对象可以直接在界面上使用
+
+    module.exports = {
+        sum: function(a, b) {
+            return a + b;
+        }
+    };
+</wxs>
+
+<view>{{ foo.sum(1,2) }}</view>

@@ -1,0 +1,47 @@
+<!--pages/shoplist/shoplist.wxml-->
+<view class="shop">
+    <image class="shop-img" src="/image/xy.jpg"></image>
+    <view class="shop-info">
+        <text class="shop-title">模板:店铺名称</text>
+        <text class="shop-tel">电话:18888888888</text>
+        <text class="shop-adress">地址:</text>
+        <text class="shop-time">营业时间:</text>
+    </view>
+    <!-- 用微软拼音软键盘打 ☆☆☆☆☆-->
+    <view class="shop-star">
+        <view class="star-after">★★★★★</view>
+        <view class="star-before">★★★★★</view>
+    </view>
+</view>
+<!-- 模版结束 -->
+<!-- 支持wx:if wx:else wx:elif  hidden是控制样式-->
+<view hidden="{{ true }}">优秀</view>
+<view wx:if="{{ false }}">良好</view>
+<view wx:else hidden>其他</view>
+
+<!-- 列表循环 wx:for遍历数组-->
+<view class="shop" wx:for="{{ shopList }}" wx:key="{{ index }}">
+    <image class="shop-img" src="{{ item.images[0] }}" lazy-load></image>
+    <view class="shop-info">
+        <text class="shop-title ell">{{ item.name }}</text>
+        <text class="shop-tel">{{ item.phone }}</text>
+        <text class="shop-adress">{{ item.address }}</text>
+        <text class="shop-time">{{ item.businessHours }}</text>
+    </view>
+    <!-- 用微软拼音软键盘打 ☆☆☆☆☆-->
+    <view class="shop-star">
+        <view class="star-after">★★★★★</view>
+        <view class="star-before" style="{{ item.score }}%;">★★★★★</view>
+    </view>
+</view>
+
+<!-- 页面加载效果 -->
+<view class="load" wx:if="{{ hasMore}}">
+    <view class="loading spin"></view>
+    <view class="load-font">正在加载中...</view>
+</view>
+<view class="load" wx:else>
+    <view class="loading spin" hidden></view>
+    <view class="load-font">已全部加载完毕</view>
+</view>
+

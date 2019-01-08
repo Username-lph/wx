@@ -1,0 +1,8 @@
+{
+    "navigationBarBackgroundColor": "#f60",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "最新消息",
+    "backgroundColor": "#eee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+}

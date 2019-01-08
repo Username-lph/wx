@@ -1,0 +1,34 @@
+/* pages/contact/contact.wxss */
+.radio-group{
+    display:flex;
+    flex-direction:column;
+    /* font-size:14px; */
+
+}
+.radio-group label{
+
+}
+.radio-group label radio{
+    /* zoom:0.8; */
+    transform:scale(0.8);
+
+}
+.Switch{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+}
+.Switch switch{
+    transform:scale(0.69);
+}
+.father{
+    width:200rpx;
+    height:200rpx;
+    background-color:skyblue;
+    padding:15rpx;
+}
+.father > .son{
+    width:100rpx;
+    height:100rpx;
+    background-color:pink;
+}
